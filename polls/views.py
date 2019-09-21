@@ -38,6 +38,7 @@ def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
     # 定义上下文变量 context ,并填充它
     context = {'latest_question_list': latest_question_list, }
+    print(context, '\n', latest_question_list)
     # 利用 render 方法载入模版文件
     return render(request, 'polls/index.html', context)
 
