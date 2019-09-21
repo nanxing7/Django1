@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% if lates_question_list %}
+    <ul>
+        {% for question in latest_question_list %}
+            <!-- polls:detail 指向具有命名空间的详细视图-->
+            <li><a href="{% url 'polls:detail' question_id %}">{{ question.question_text }}</a></li>
+        {% endfor %}
+    </ul>>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
+</body>
+</html>
